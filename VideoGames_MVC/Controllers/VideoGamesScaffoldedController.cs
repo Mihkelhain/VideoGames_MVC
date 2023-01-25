@@ -19,12 +19,37 @@ namespace VideoGames_MVC.Controllers
             _context = context;
         }
 
-        // GET: VideoGamesScaffolded
-        public async Task<IActionResult> Index()
+        // GET: Movies
+        public async Task<IActionResult> Index(string VideoGameGenre, string searchString)
         {
-            return View(await _context.VideoGames.ToListAsync());
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from m in _context.VideoGames
+                                            orderby m.Genre
+                                            select m.Genre;
+
+            var videoGames = from m in _context.VideoGames
+                         select m;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                videoGames = videoGames.Where(s => s.Name.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(VideoGameGenre))
+            {
+                videoGames = videoGames.Where(x => x.Genre == VideoGameGenre);
+            }
+
+            var VideoGameGenreVM = new VideoGameGenreViewModel
+            {
+                Genres = new SelectList(await genreQuery.Distinct().ToListAsync()),
+                VideoGames = await videoGames.ToListAsync()
+            };
+
+            return View(VideoGameGenreVM);
         }
 
+       
         // GET: VideoGamesScaffolded/Details/5
         public async Task<IActionResult> Details(int? id)
         {

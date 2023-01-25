@@ -26,6 +26,7 @@ namespace VideoGames_MVC.Models
                         Name = "Cities Skyline",
                         AgeRating = 8,
                         ReleaseDate = DateTime.Parse("2007-2-10"),
+                        MultiPlayer = false,
                         Genre = "City Building",
                         Price = 19.99M
                     },
@@ -35,6 +36,7 @@ namespace VideoGames_MVC.Models
                         Name = "Valorant ",
                         AgeRating = 13,
                         ReleaseDate = DateTime.Parse("2015-3-30"),
+                        MultiPlayer = true,
                         Genre = "Shooter",
                         Price = 4.99M
                     },
@@ -44,6 +46,7 @@ namespace VideoGames_MVC.Models
                         Name = "Shadow Empires",
                         AgeRating = 3,
                         ReleaseDate = DateTime.Parse("2014-8-13"),
+                        MultiPlayer = true,
                         Genre = "Stradegy",
                         Price = 14.99M
                     },
@@ -53,6 +56,7 @@ namespace VideoGames_MVC.Models
                         Name = "BattleField",
                         AgeRating = 17,
                         ReleaseDate = DateTime.Parse("2006-4-15"),
+                        MultiPlayer = true,
                         Genre = "Shooter",
                         Price = 59.99M
                     }

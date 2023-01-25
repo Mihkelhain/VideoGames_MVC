@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VideoGames_MVC.Data;
 
 namespace VideoGames_MVC.Migrations
 {
     [DbContext(typeof(VideoGames_MVCContext))]
-    partial class VideoGames_MVCContextModelSnapshot : ModelSnapshot
+    [Migration("20230125223846_Multiplayer")]
+    partial class Multiplayer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

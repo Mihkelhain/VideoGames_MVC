@@ -1,7 +1,7 @@
 ﻿@model VideoGames_MVC.Models.VideoGameGenreViewModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Video game List";
 }
 
 <h1>Index</h1>
@@ -11,11 +11,14 @@
 </p>
   <form asp-controller="VideoGamesScaffolded" asp-action="Index" method="get">
     <p>
-        Genre: <select asp-for="VideoGameGenre" asp-items="Model.Genres">
+        <label asp-for="VideoGameGenre">Video Game Genres</label>
+        <select asp-for="VideoGameGenre" asp-items="Model.Genres"> 
             <option value="">All</option>
         </select>
+        <br />
 
-        Title: <input type="text" asp-for="SearchString" />
+        <label asp-for="SearchString">Search Bar</label>
+        <input type="text" asp-for="SearchString"   />
         <input type="submit" value=" Filter" />
     </p>
 </form>

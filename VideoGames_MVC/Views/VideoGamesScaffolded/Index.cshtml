@@ -11,11 +11,12 @@
 </p>
   <form asp-controller="VideoGamesScaffolded" asp-action="Index" method="get">
     <p>
-        <select asp-for="VideoGameGenre" asp-items="Model.Genres">
+        Genre: <select asp-for="VideoGameGenre" asp-items="Model.Genres">
             <option value="">All</option>
         </select>
 
         Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value=" Filter" />
     </p>
 </form>
 

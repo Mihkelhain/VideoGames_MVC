@@ -15,10 +15,10 @@
         <select asp-for="VideoGameGenre" asp-items="Model.Genres"> 
             <option value="">All</option>
         </select>
-        <br />
+
 
         <label asp-for="SearchString">Search Bar</label>
-        <input type="text" asp-for="SearchString"   />
+        <input type="search" asp-for="SearchString"   />
         <input type="submit" value=" Filter" />
     </p>
 </form>
